@@ -1,0 +1,5 @@
+function FilmsItem() {
+
+}
+
+export {  FilmsItem  }
