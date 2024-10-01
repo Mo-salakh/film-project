@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Footer } from "./Footer";
 import { Header } from "./Header";
 import { Main } from "./Main";
 import { API_KEY } from "../config";
@@ -8,6 +7,7 @@ function Layout() {
 
     const [popularFilms, setPopularFilms] = useState([])
     const [films, setFilms] = useState([])
+    const [loading, setLoading] = useState(true)
 
     useEffect(() =>  {
         fetch( 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=2&sort_by=popularity.desc', {
@@ -28,6 +28,10 @@ function Layout() {
                 id : element.id
             }
         })))
+        .catch(err => console.error(err.message))
+        .finally(() => {
+            setLoading(false)
+        })
     }, [])
 
 
@@ -39,7 +43,7 @@ function Layout() {
         })
         .then(respo => respo.json()) 
         .then(result => setFilms(result.results.splice(0,14).map(element => {
-            return {
+            return  {
                 originalTitle: element.original_title,
                 overview: element.overview,
                 voteAverage: element.vote_average,
@@ -50,13 +54,20 @@ function Layout() {
                 id : element.id
             }
         })))
+        .catch(err => console.error(err.message))
+        .finally(() => {
+            setLoading(false)
+        })
     },[])
+
+    if(loading) return (
+        <div className="loader"></div>
+    )
 
     return (
         <>
         <Header popularFilms={popularFilms} />
         <Main films={films}/>
-        <Footer />
         </>
     );
 

@@ -1,5 +1,0 @@
-function Footer() {
-
-}
-
-export {  Footer  }

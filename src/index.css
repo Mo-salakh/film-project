@@ -296,6 +296,8 @@ main .movies_list img {
 
 .f-navbar {
   padding: 0 7.5rem;
+  background-color: rgba(18, 24, 41, 0.8);
+  backdrop-filter: blur(40px)
 }
 
 .f-navbar_list {
@@ -303,11 +305,15 @@ main .movies_list img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(18, 24, 41, 0.8);
   padding: 1rem;
 }
 
 .f-navbar_links {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #A8AEBF;
+  line-height: 24px;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -331,6 +337,7 @@ main .movies_list img {
   border-radius: 40px;
 }
 
+
 .film-name {
   padding: 2.5rem 0 2.5rem 2.5rem ;
   width: 560px;
@@ -341,4 +348,169 @@ main .movies_list img {
   position: absolute;
   bottom: -72px;
   left: 80px;
+}
+
+.f-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 40px;
+  color: #EBEEF5;
+}
+
+.film-name span {
+  color: #BEB7FB;
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 16px;
+}
+
+
+.f-info {
+  margin: 152px 200px;
+  display: flex;
+  gap: 80px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.f-info_poster img {
+  border-radius: 24px;
+}
+
+.f-info_data {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.f-info_title {
+  color: #EBEEF5;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 32px;
+}
+
+.f-info_subtitle {
+  font-size: 1.25rem;
+  line-height: 32px;
+  color: rgba(142, 149, 169, 1);
+}
+
+.f-info_rating span {
+  display: inline-block;
+  font-size: 16px;
+  color: #FFAD49;
+  padding: 4px 8px;
+  line-height: 23px;
+  background-color: #000000A6;
+  border-radius: 8px;
+}
+.f-info_rating span img {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+  transform: translateY(1.5px);
+}
+
+.f-info_details dt {
+  font-size: 1rem;
+  color: rgba(118, 126, 148, 1);
+}
+
+.f-info_details dd {
+  line-height: 32px;
+  font-size: 1.25rem;
+  color: rgba(195, 200, 212, 1);
+}
+
+
+.f-comment {
+  position: relative;
+}
+
+.f-comment * {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+}
+
+.f-comment img {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 17px;
+  left: 17px;
+}
+
+.f-comment_input {
+  border: 1px #323B54 solid;
+  padding: 20px 20px 20px 50px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  color: #767E94;
+  font-weight: 400;
+  height: 64px;
+  width: calc(100% - 28%);
+  margin-right: 24px;
+}
+
+.f-comment_btn {
+  color: #FFFFFF;
+  padding: 1rem;
+  border: 2px #7B6EF6 solid;
+  background-color: #7B6EF6;
+  border-radius: 12px;
+  width: 25%;
+  height: 56px;
+}
+
+
+.f-comment_list {
+  margin-top: 75px;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+
+.f-comment_item {
+  color: #7B6EF6;
+  padding: 40px 0 40px 40px;
+  backdrop-filter: blur(1px);
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 50%;
+  border-radius: 12px;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 60px;
+  height: 60px;
+  display: grid;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+.loader:before,
+.loader:after {
+  content: "";
+  grid-area: 1/1; 
+  background: #514b82;
+  clip-path: polygon(0 0,100% 0,100% 100%,75% 25%,0 0,0 100%,100% 100%,25% 75%,0 0);
+  animation: l20 1.5s infinite linear;
+}
+.loader:after {
+  clip-path: polygon(0 0,76% 24%,100% 100%,24% 76%);
+  --s:0;
+}
+@keyframes l20 {
+  0%      {transform: perspective(100px) rotate3d(1,var(--s,1),0,0)      } 
+  25%     {transform: perspective(100px) rotate3d(1,var(--s,1),0,-90deg) }
+  25.01%  {transform: perspective(100px) rotate3d(1,var(--s,1),0,-90deg) } 
+  40%,60% {transform: perspective(100px) rotate3d(1,var(--s,1),0,-180deg)} 
+  75%     {transform: perspective(100px) rotate3d(1,var(--s,1),0,-270deg)}
+  75.01%  {transform: perspective(100px) rotate3d(1,var(--s,1),0,-270deg)} 
+  90%,100%{transform: perspective(100px) rotate3d(1,var(--s,1),0,-360deg)}
 }

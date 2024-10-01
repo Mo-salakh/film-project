@@ -13,14 +13,12 @@ function PopularList(props) {
 
     useEffect(() => {
         const intervalId = setInterval(() => {
-            // Вызываем функцию для текущего элемента
             getPosterPath(values[currentIndex].id);
-            // Увеличиваем индекс и сбрасываем его, если он превышает длину массива
             setCurrentIndex((prevIndex) => (prevIndex + 1) % values.length);
-        }, 10000); 
+        }, 6000); 
 
-        return () => clearInterval(intervalId); // Очистка интервала при размонтировании компонента
-    }, [currentIndex, values, getPosterPath]); // Зависимости
+        return () => clearInterval(intervalId);
+    }, [currentIndex, values, getPosterPath]);
 
 
 
