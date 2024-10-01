@@ -1,5 +1,0 @@
-function FilmsList() {
-
-}
-
-export {  FilmsList  }

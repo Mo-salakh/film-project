@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 import { Main } from "./Main";
-import { API_KEY , getPopularFilms, getRatedFilms } from "../config";
+import { API_KEY } from "../config";
 
 function Layout() {
 
@@ -55,7 +55,7 @@ function Layout() {
     return (
         <>
         <Header popularFilms={popularFilms} />
-        <Main films={films} />
+        <Main films={films}/>
         <Footer />
         </>
     );
@@ -65,16 +65,3 @@ function Layout() {
 
 export { Layout };
 
-
-// setFilms(result.results.splice(0,7).map(element => {
-//     return {
-//         originalTitle: element.original_title,
-//         overview: element.overview,
-//         voteAverage: element.vote_average,
-//         releaseDate: element.release_date,
-//         genreIds: element.genre_ids,
-//         posterPath: element.poster_path,
-//         backdropPath: element.backdrop_path,
-//         id : element.id,
-//     }
-// }))

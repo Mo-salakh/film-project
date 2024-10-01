@@ -1,5 +1,0 @@
-function FilmData() {
-
-}
-
-export {  FilmData  }

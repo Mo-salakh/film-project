@@ -1,5 +1,0 @@
-function FilmsItem() {
-
-}
-
-export {  FilmsItem  }

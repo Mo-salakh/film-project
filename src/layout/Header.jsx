@@ -12,7 +12,6 @@ function Header(props) {
     
     useEffect(() => {
         popularFilms.map((film,index) => {
-            console.log(popularFilms[0].posterPath)
            return setInitialFilm(popularFilms[0])
         })
     }, [popularFilms])
@@ -36,3 +35,6 @@ function Header(props) {
 }
 
 export {  Header  }
+
+
+// style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})` }}
