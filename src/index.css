@@ -49,6 +49,18 @@ header .nav {
   display: flex;
   gap: 0 2.1875rem;
   align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.nav_item span {
+  position: absolute;
+  right: -14px;
+  bottom: 8px;
+  z-index: 10;
+  font-size: 1rem;
+  color: red;
+  font-weight: 800;
 }
 
 #search, #bell {
@@ -481,6 +493,79 @@ main .movies_list img {
   background-color: rgba(0, 0, 0, 0.2);
   width: 50%;
   border-radius: 12px;
+}
+
+
+.favorites_content {
+  width: 50%;
+  height: 350px;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.2) ;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  border-radius: 24px;
+  overflow: scroll;
+  padding: 0 1rem;
+}
+
+.favorites_list {
+  display: flex;
+  gap: 1rem;
+  position: relative;
+}
+
+.favorites_item {
+  display: flex;
+  align-items: center;
+  padding: .5 rem;
+  flex-direction: column;
+  position: relative;
+  color: #FFFFFF;
+}
+
+.favorites_item img {
+  border-radius: 10px;
+  width: 150px;
+  height: 200px;
+}
+
+.favorites_item-remove,
+.favorites_list-close {
+  position: absolute;
+  color: red;
+  font-weight: 800;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.favorites_list-close {
+  top: 10px;  
+  left: 15px;
+}
+.favorites_item-remove {
+  top: 0;
+  left: 10px;
+}
+
+.favorite_title {
+  margin: 1rem 0;
+  text-align: center;
+  font-size: 2rem;
+  color: #FFFFFF;
+}
+
+
+
+/* ADAPTIVE */
+
+
+@media screen and(max-width: 720px) {
+  * {
+    color: red;
+  }
 }
 
 /* HTML: <div class="loader"></div> */

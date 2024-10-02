@@ -5,7 +5,7 @@ import { PopularList } from "../components/PopularList";
 
 function Header(props) {
 
-    let { popularFilms } = props
+    let { popularFilms, favorites, setClicked, isClicked } = props
     const [initialFilm, setInitialFilm] = useState([])
     const [posterPath, setPosterPath] = useState('')
     const [popularFilminfo, setPopularFilmInfo] = useState([])
@@ -27,7 +27,7 @@ function Header(props) {
 
     return (
         <header className="header" style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${posterPath ? posterPath : initialFilm.backdropPath})` }}>
-            <Navbar />
+            <Navbar favorites={favorites} setClicked={setClicked} isClicked={isClicked} />
             <PopularFilmInfo popularFilminfo={popularFilminfo} initialFilm={initialFilm} />
             <PopularList popularFilms={popularFilms} getPosterPath={getPosterPath}/>
         </header>
