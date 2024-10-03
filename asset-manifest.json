@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/film-project/static/css/main.b519bd97.css",
-    "main.js": "/film-project/static/js/main.9aafa088.js",
+    "main.js": "/film-project/static/js/main.a510d4bd.js",
     "static/media/ApnaTV.svg": "/film-project/static/media/ApnaTV.9444b2fa1ca01e4ee72427997e8141fd.svg",
     "index.html": "/film-project/index.html",
     "static/media/Film-page-logo.svg": "/film-project/static/media/Film-page-logo.9c00d9e87feda61606ee77f58efbd8e2.svg",
     "main.b519bd97.css.map": "/film-project/static/css/main.b519bd97.css.map",
-    "main.9aafa088.js.map": "/film-project/static/js/main.9aafa088.js.map"
+    "main.a510d4bd.js.map": "/film-project/static/js/main.a510d4bd.js.map"
   },
   "entrypoints": [
     "static/css/main.b519bd97.css",
-    "static/js/main.9aafa088.js"
+    "static/js/main.a510d4bd.js"
   ]
 }
