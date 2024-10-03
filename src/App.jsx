@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div className="App">
-      <Routes basename='/film-project/'>
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="film/:id" element={<Film />} />
       </Routes>
