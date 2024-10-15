@@ -13,13 +13,13 @@ function Layout() {
     const [isClicked, setClicked] = useState(false)
 
     useEffect(() =>  {
-        fetch( 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=12&sort_by=popularity.desc', {
+        fetch( 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=2&sort_by=popularity.desc', {
             headers: {
                 "Authorization":API_KEY
             }
         })
         .then(respo => respo.json()) 
-        .then(result => setPopularFilms(result.results.splice(9,).map(element => {
+        .then(result => setPopularFilms(result.results.splice(0,14).map(element => {
             return {
                 originalTitle: element.original_title,
                 overview: element.overview,
@@ -39,13 +39,13 @@ function Layout() {
 
 
     useEffect(() => {
-        fetch( 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc', {
+        fetch( 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=6&sort_by=popularity.desc', {
             headers: {
                 "Authorization":API_KEY
             }
         })
         .then(respo => respo.json()) 
-        .then(result => setFilms(result.results.splice(7,).map(element => {
+        .then(result => setFilms(result.results.slice(0,11).map(element => {
             return  {
                 originalTitle: element.original_title,
                 overview: element.overview,
@@ -63,10 +63,6 @@ function Layout() {
         })
     },[])
 
-    if(loading) return (
-        <div className="loader"></div>
-    )
-
     function getFavorite(id) {
         const isFavorite = favorites.some(film => film.id === id);
         
@@ -80,9 +76,14 @@ function Layout() {
             }
         }
     }
+
     function removeFavorite(id) {
         setFavorites(favorites.filter(favorite => favorite.id !== id))
     }
+
+    if(loading) return (
+        <div className="loader"></div>
+    )
 
     return (
         <>

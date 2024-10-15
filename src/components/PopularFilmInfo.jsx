@@ -2,7 +2,6 @@ import WatchI from '../img/watch-i.png'
 
 
 export function PopularFilmInfo(props) {
-
     let { originalTitle , overview } = props.popularFilminfo
     let { originalTitle: InitialTitle, overview:initialOverview } = props.initialFilm
 
